@@ -17,5 +17,24 @@ usethis::use_git_config(
 )
 ##Informacion solo para que registre y vincule el repositorio a mis scripts. 
 usethis::use_github()
+##Despues de utilizar esto, es solo una vez, solo para que se genere el github 
+##ahora, despues sera todo a partir de commit, push y pull. 
 
 
+pdf("01_raw_data/tabla_de_expresion")
+x1<- matrix(runif(5*9, min =100, max= 500),
+            ncol = 5,
+            nrow = 9)
+
+
+colnames(x1)<- paste("gen", 1:5)
+rownames(x1)<- paste("expresion", 1:9)
+round(x1)
+x1
+dev.off()
+
+help(runif)
+
+pdf("03_results/boxplotx.matriz.pdf")
+boxplot(x1, ncol = "lightblue", main = "boxplot de matriz", xlab= "x", ylab= "values")
+dev.off()
